@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Guardiões do Delta - Parnaíba/PI</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="game-container">
+        <canvas id="gameCanvas" width="900" height="600"></canvas>
+        
+        <div id="hud">
+            <div class="hud-item">
+                <span class="hud-label">🌬️ Oxigênio:</span>
+                <div class="progress-bar">
+                    <div id="oxygen-bar" class="progress-fill"></div>
+                </div>
+                <span id="oxygen-text">20%</span>
+            </div>
+            <div class="hud-item">
+                <span class="hud-label">💰 Moedas:</span>
+                <span id="coins-text">20</span>
+            </div>
+            <div class="hud-item">
+                <span class="hud-label">🌳 Árvores:</span>
+                <span id="trees-text">0</span>
+            </div>
+            <div class="hud-item">
+                <span class="hud-label">📍 Local:</span>
+                <span id="location-text">Luís Correia</span>
+            </div>
+        </div>
+
+        <div id="instructions">
+            <p>⬆️⬇️⬅️➡️ ou WASD: Mover | <b>E</b>: Plantar | <b>B</b>: Loja | <b>1-6</b>: Selecionar Semente | <b>R</b>: Reiniciar</p>
+        </div>
+
+        <div id="shop" class="hidden">
+            <div class="shop-content">
+                <h2>🏪 Loja de Sementes</h2>
+                <p class="shop-coins">💰 Suas moedas: <span id="shop-coins">20</span></p>
+                <div id="shop-items"></div>
+                <button id="close-shop" class="btn">Fechar Loja (B)</button>
+            </div>
+        </div>
+
+        <div id="menu" class="overlay">
+            <div class="overlay-content">
+                <h1>🌳 Guardiões do Delta</h1>
+                <h2>Parnaíba - Piauí</h2>
+                <p>Plante árvores e salve os pontos turísticos!</p>
+                <p class="rules">🎯 Objetivo: Elevar o oxigênio a 100%<br>
+                ⚠️ Se o oxigênio chegar a 0%, você perde!<br>
+                🌳 A cada 10 árvores, você viaja para um novo ponto turístico</p>
+                <button id="start-btn" class="btn">Iniciar Jogo</button>
+            </div>
+        </div>
+
+        <div id="game-over" class="overlay hidden">
+            <div class="overlay-content">
+                <h1 id="end-title">Fim de Jogo</h1>
+                <p id="end-message"></p>
+                <p id="end-stats"></p>
+                <button id="restart-btn" class="btn">Jogar Novamente (R)</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
